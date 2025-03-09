@@ -3,6 +3,9 @@
 # File name          : targetedKerberoast.py
 # Author             : Shutdown (@_nwodtuhs)
 # Date created       : 2 Aug 2021
+#
+# Date updated       : 9 Mar 2025
+# Author             : MatrixEditor
 
 import argparse
 import sys
@@ -759,6 +762,10 @@ def main():
             users = get_users_and_SPNs(
                 ldap_session=ldap_session, domain=args.auth_domain
             )
+
+        if len(users) == 0:
+            logger.error("No users found / No users specified!")
+            exit(0)
 
         logger.debug(users)
 
