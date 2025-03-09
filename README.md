@@ -1,6 +1,6 @@
 # targetedKerberoast
 
-targetedKerberoast is a Python script that can, like many others (e.g. [GetUserSPNs.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/GetUserSPNs.py)), print "kerberoast" hashes for user accounts that have a SPN set. 
+targetedKerberoast is a Python script that can, like many others (e.g. [GetUserSPNs.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/GetUserSPNs.py)), print "kerberoast" hashes for user accounts that have a SPN set.
 This tool brings the following additional feature: for each user without SPNs, it tries to set one (abuse of a write permission on the `servicePrincipalName` attribute), print the "kerberoast" hash, and delete the temporary SPN set for that operation. This is called targeted Kerberoasting.
 This tool can be used against all users of a domain, or supplied in a list, or one user supplied in the CLI.
 
@@ -8,7 +8,14 @@ More information about this attack
  - [The Hacker Recipes - Kerberoast](https://www.thehacker.recipes/ad/movement/kerberos/kerberoast)
  - [The Hacker Recipes - Targeted Kerberoasting](https://www.thehacker.recipes/ad/movement/access-controls/targeted-kerberoasting)
 
-# Usage
+## Installation
+
+For Python venv-wide installation, simply use `pip`:
+```
+pip install git+https://github.com/MatrixEditor/targetedKerberoast
+```
+
+## Usage
 
 This tool supports the following authentications
  - (NTLM) Cleartext password
@@ -64,6 +71,6 @@ Below is an example what the tool can do.
 
 ![](./.assets/example.png)
 
-# Credits and references
+## Credits and references
 
 Credits to the whole team behind [Impacket](https://github.com/SecureAuthCorp/impacket/) and its contributors.
